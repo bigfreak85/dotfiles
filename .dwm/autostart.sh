@@ -33,3 +33,8 @@ fi
 if ! pgrep -x "clipmenud" > /dev/null; then
 /home/bigfreak/git/clipmenu/clipmenud & 
 fi
+#urxvt Daemon...
+if ! pgrep -x "urxvtd" > /dev/null; then
+urxvtd -f
+fi
+
