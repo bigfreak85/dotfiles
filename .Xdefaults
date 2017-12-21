@@ -15,7 +15,7 @@ URxvt*shading: 40
 URxvt.transparent: true
 URxvt*clipboard.autocopy: true
 URxvt*perl-lib: /usr/lib/urxvt/perl/
-URxvt*perl-ext-common: default,matcher,clipboard,keyboard-select
+URxvt*perl-ext-common: default,matcher,keyboard-select
 URxvt*url-launcher: /usr/bin/xdg-open
 URxvt*matcher.button: 1
 URxvt*matcher.rend.0: Uline Bold fg5
