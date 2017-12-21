@@ -1,5 +1,7 @@
 #!/bin/bash
 
+#java Fenster korrekt darstellen
+export _JAVA_AWT_WM_NONREPARENTING=1
 #Bildschirme anordnen...
 xrandr --output eDP1 --pos 0x0
 xrandr --output DP3-2-1-1 --pos 0x0
@@ -20,9 +22,14 @@ xowner=$(who | grep '(:0)' | awk 'BEGIN { FS = "[ \t\n]+" } { print $1}')
 
 Anzahl=`sudo DISPLAY=:0.0 -u $xowner xrandr | grep -c -w "connected"`
 if [ "$Anzahl" == "4" ]; then
-  nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/louvre.jpg &
+  #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/Berg.jpg &
+  #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/wueste1.jpg &
+  nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/n2_kleiner.jpg &
 else
-  nitrogen --set-centered /home/bigfreak/Pictures/bg/SIoLm5X.png &
+  4kdown
+  nitrogen --set-centered /home/bigfreak/Pictures/1920x1200/real/Bild_1296\(1920x1200\).jpg
+# nitrogen --set-centered /home/bigfreak/Pictures/1920x1200/real/Bild_1704\(1920x1200\).jpg 
+ #nitrogen --set-centered /home/bigfreak/Pictures/bg/people_ignore.jpg &
 fi
 
 #Lock-Screen when Mouse 3 Seconds on right corner (i3lock)
