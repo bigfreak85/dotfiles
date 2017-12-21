@@ -8,6 +8,8 @@ ZSH=/usr/share/oh-my-zsh
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
+#ZSH_THEME="afowler"
+#ZSH_THEME="bira"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -81,7 +83,7 @@ plugins=(git extract web-search themes)
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PAGER=most
+#export PAGER=most
 export EDITOR=vim
 alias mc="mc --nosubshell"
 ZSH_CACHE_DIR=$HOME/.oh-my-zsh-cache
@@ -90,11 +92,14 @@ if [[ ! -d $ZSH_CACHE_DIR ]]; then
 fi
 
 source $ZSH/oh-my-zsh.sh
+
+
 #bindkeys
 autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
 add-zsh-hook chpwd chpwd_recent_dirs
 bindkey "^J" backward-word
 bindkey "^k" forward-word 
+bindkey "^d" vi-kill-eol
 #bindkey "\e\e[D" backward-word
 #bindkey "\e\e[C" forward-word
 

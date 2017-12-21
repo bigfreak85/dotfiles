@@ -15,7 +15,10 @@ set hidden
 set undodir=~/.vim/undodir
 set undolevels=1000
 set undoreload=1000
+set relativenumber
 
+"autocmd InsertEnter * :set number
+"autocmd InsertLeave * :set relativenumber
 
 
 let vimDir = '$HOME/.vim'
