@@ -1,0 +1,11 @@
+pacman -Qqm lists foreign packages; which, for must users, means AUR
+
+pacman -Qqe lists packages that were explicitely installed.
+
+
+
+$ pacman -Qqe > pkglist.txt
+Note: If you used -Qqet, when reinstalling the list all the non-top-level packages would be set as dependencies.
+To install packages from the list backup, run:
+# pacman -S - < pkglist.txt
+
