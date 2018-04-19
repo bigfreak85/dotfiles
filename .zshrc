@@ -9,7 +9,7 @@ ZSH=/usr/share/oh-my-zsh
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 ZSH_THEME="af-magic"
 #ZSH_THEME="afowler"
-#ZSH_THEME="bira"
+#ZSH_THEME="maran"
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -52,7 +52,7 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git extract web-search themes)
+plugins=(git extract web-search themes fzf-zsh)
 
 
 # User configuration
@@ -102,4 +102,11 @@ bindkey "^k" forward-word
 bindkey "^d" vi-kill-eol
 #bindkey "\e\e[D" backward-word
 #bindkey "\e\e[C" forward-word
+
+#fzf-zsh konfig
+#export FZF_DEFAULT_OPTS="--color=light"
+
+#Setze Exa als Default directory lister"
+export EXA_COLORS="di=1;38;5;105:da=0;38;5;072:ex=1;32:*.pdf=0;7"
+#alias ls="exa"
 

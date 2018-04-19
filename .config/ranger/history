@@ -1,0 +1,50 @@
+filter _o
+find
+filter .err
+filter err
+filter .tis
+filter 
+bulkrename 
+extracthere
+filter ST
+cd .ssh
+filter xmp
+filter
+find 3310
+help
+settings_set 
+set colorscheme snow
+set colorscheme solarized
+set colorscheme classictouch
+set colorscheme colorful
+set colorscheme junge
+set colorscheme jungle
+set colorscheme default
+filter mkv
+rename rvi.kdbx
+shell 
+find 
+fi
+mkdir lisasicherung
+find sel
+find ha
+compress sapexport.zip
+compress pleier.zip
+
+shell fb -n pleier.zip <%s
+find 48
+rename serienbrief.sql
+find 4450
+find 5020
+find 4450S
+find 501j
+rename EXP125.sql
+find 4490j
+open_with gvim
+open_with 
+rename EXP501.sql
+open_with vim
+open_with evince
+extracthere 
+delete
+set show_hidden true

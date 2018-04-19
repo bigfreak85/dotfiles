@@ -23,8 +23,8 @@ xowner=$(who | grep '(:0)' | awk 'BEGIN { FS = "[ \t\n]+" } { print $1}')
 Anzahl=`sudo DISPLAY=:0.0 -u $xowner xrandr | grep -c -w "connected"`
 if [ "$Anzahl" == "4" ]; then
   #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/Berg.jpg &
-  #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/wueste1.jpg &
-  nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/n2_kleiner.jpg &
+  nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/wueste1.jpg &
+  #nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/n2_kleiner.jpg &
 else
   4kdown
   nitrogen --set-centered /home/bigfreak/Pictures/1920x1200/real/Bild_1296\(1920x1200\).jpg

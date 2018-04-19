@@ -16,6 +16,7 @@ set undodir=~/.vim/undodir
 set undolevels=1000
 set undoreload=1000
 set relativenumber
+set number
 
 "autocmd InsertEnter * :set number
 "autocmd InsertLeave * :set relativenumber
