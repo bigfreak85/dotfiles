@@ -23,7 +23,10 @@ xowner=$(who | grep '(:0)' | awk 'BEGIN { FS = "[ \t\n]+" } { print $1}')
 Anzahl=`sudo DISPLAY=:0.0 -u $xowner xrandr | grep -c -w "connected"`
 if [ "$Anzahl" == "4" ]; then
   #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/Berg.jpg &
-  nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/wueste1.jpg &
+  #nitrogen --set-zoom /home/bigfreak/Pictures/bg/5760x1200/wueste1.jpg &
+  #nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/gardenflower_w5760_h1200_cw5760_ch1200.jpg &
+  #nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/28211216839_138f55c36e_o.jpg &
+  nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/40542389555_5f1afc3cb4_o.jpg &
   #nitrogen --set-scaled /home/bigfreak/Pictures/bg/5760x1200/n2_kleiner.jpg &
 else
   4kdown
@@ -53,6 +56,6 @@ fi
 if ! pgrep -x "urxvtd" > /dev/null; then
 urxvtd -f
 fi
-
+#Touchpad aus
 #Startup-Sound
-mplayer "/home/bigfreak/Downloads/startupsounds/Sega Dreamcast - Boot.wav" </dev/null >/dev/null 2>&1 &
+mpv "/home/bigfreak/Downloads/startupsounds/Sega Dreamcast - Boot.wav" </dev/null >/dev/null 2>&1 &
