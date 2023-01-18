@@ -1,0 +1,31 @@
+#/* vim: set syntax=swayconfig: */
+#Window Conf
+	default_border none
+	for_window [class="^.*"] border pixel 0
+	for_window [app_id="pavucontrol"] floating enable, border normal
+	for_window [app_id="com.github.hluk.copyq"] floating enable
+	for_window [class="Bitwarden"] border normal
+	for_window [class="Bitwarden"] floating enable
+	for_window [instance="bitwarden"] floating enable
+	for_window [instance="bitwarden"] border normal
+# floating pop up automatically
+	for_window [window_role="pop-up"] floating enable
+	for_window [window_role="task_dialog"] floating enable
+# von robert hepple
+	for_window [title="(?:Open|Save) (?:File|Folder|As)"] floating enable, border normal
+	for_window [class="Gimp"] floating enable, border normal
+	for_window [class="Vncviewer"] floating enable, border normal
+	for_window [window_role="Preferences"] floating enable, border normal
+	for_window [window_role="bubble"] floating enable, border normal
+	for_window [window_role="pop-up"] floating enable, border normal
+	for_window [window_role="task_dialog"] floating enable, border normal
+	for_window [window_type="dialog"] floating enable, border normal
+	for_window [window_type="menu"] floating enable, border normal
+	for_window [app_id="blueman-manager"] floating enable, border normal
+#Assignments
+	assign [class="firefox" instance="Navigator"] $web
+	assign [class="KeePass2" instance="keepass2"] $pass
+	assign [title="Remmina"] $remote
+	assign [title="ranger"] $files
+	assign [class="Microsoft Teams - Preview"] $teams
+#

@@ -1,0 +1,13 @@
+#/* vim: set syntax=swayconfig: */
+exec swayidle -w timeout 300 'swaylock -i DP-7:/home/bigfreak/Pictures/IMCLOGOS/bg.jpg -i DP-9:/home/bigfreak/Pictures/IMCLOGOS/Rewrite\ the\ way\ we\ learn-Wallpaper.jpg -i DP-8:/home/bigfreak/Pictures/IMCLOGOS/bg.jpg -i eDP-1:/home/bigfreak/Pictures/IMCLOGOS/bg.jpg' 
+# Backlight keyboard auf 1
+exec echo 1 | tee /sys/class/leds/tpacpi::kbd_backlight/brightness
+exec /home/bigfreak/.config/sway/tools/logonpic
+exec firefox
+exec remmina
+exec teams
+exec swaync
+# Screensharing Fixes
+exec systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+exec hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+

@@ -1,0 +1,13 @@
+#!/bin/bash
+TMP=$(mktemp /tmp/XXXXXXX.png)
+flameshot gui --raw > $TMP
+filename=$(dmenu -fn "monospace:size=10" -p "Screenshot filename" < /dev/null)
+if test "$filename"
+then
+	output="/tmp/$filename.png"
+	mv -v "$TMP" $output
+	#ERG=$(fb -n "$filename" < "$output")
+	#echo $ERG
+	#Lade Screenshot hoch und kopiere Link in Zwischenablage 
+	fb -n $filename < $output | while read OUTPUT; do notify-send "File uploaded" "$OUTPUT"; done | xsel
+fi

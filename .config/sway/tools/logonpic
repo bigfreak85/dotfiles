@@ -1,0 +1,3 @@
+	#!/bin/sh
+
+	fswebcam --no-banner -d /dev/video4 -r 1280x720 ~/Pictures/logon/$(date +%d-%m-%y_%T).jpg || fswebcam -s 20 --no-banner -d /dev/video0 -r 1280x720 ~/Pictures/logon/$(date +%d-%m-%y_%T).jpg

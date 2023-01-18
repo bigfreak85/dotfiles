@@ -1,0 +1,62 @@
+#/* vim: set syntax=swayconfig: */
+# Thinkpad Inputs
+	input "2:10:TPPS/2_Elan_Trackpoint" {
+			accel_profile flat
+			pointer_accel 1
+	}
+	input "2:7:SynPS/2_Synaptics_TouchPad" {
+			pointer_accel 1
+	    tap enabled
+			dwt enabled
+	    natural_scroll enabled
+	}
+	input "1:1:AT_Translated_Set_2_keyboard" {
+			xkb_layout de,us
+			xkb_variant nodeadkeys,
+			xkb_options grp:win_space_toggle
+	}
+# New Poker 2
+	input "1241:521:USB-HID_Keyboard"
+	{
+			xkb_layout de,us
+			xkb_variant nodeadkeys,
+			xkb_options grp:win_space_toggle
+	}
+# KBDFans DZ60
+	input "17498:8800:KBDFans_DZ60"
+	{
+		xkb_layout de,us
+		xkb_variant nodeadkeys,
+		xkb_options grp:win_space_toggle
+	}
+# IDOBAO ID67
+input "26980:103:IDOBAO_ID67"
+	{
+		xkb_layout de,us
+		xkb_variant nodeadkeys,
+		xkb_options grp:win_space_toggle
+	}
+# Decent65
+input "18181:29797:Evyd13_ta-65"
+	{
+		xkb_layout de,us
+		xkb_variant nodeadkeys,
+		xkb_options grp:win_space_toggle
+	}
+
+input "1390:304:EX-G_Pro_TrackBall"
+	{
+			accel_profile adaptive
+			pointer_accel -0.2
+			natural_scroll disabled
+			scroll_factor 2
+	}
+input "1133:45095:ERGO_M575_Mouse"
+	{
+			accel_profile adaptive
+			pointer_accel	1 
+			natural_scroll disabled
+			scroll_factor 2
+	}
+
+

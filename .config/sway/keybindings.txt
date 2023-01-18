@@ -1,0 +1,36 @@
+win+p ; save area
+win+shift+p ; save win
+win+ctrl+p ; copy area
+alt+ctrl+p ; copy win
+Print ; save screen
+ctrl+Print ; copy screen
+alt+ctrl+s ; record area
+
+alt+control + D ; disable internal Monitor
+alt+Shift+n ; Sway Notification Center
+alt+tab ; Workspace toggle
+alt+shift+c ; kill active prog/window,....
+alt+shift+q ; show logoff-shutdown menu
+
+win+b ; browser firefox
+win+l ; lock Workstation
+win+i ; copyq show 
+win+c ; virt-manager open
+alt+r ; start ranger
+
+alt+shift+a ; set transparence
+win+shift+r ; reload sway config
+alt+f ; toggle fullscreen
+alt+b ; splith
+alt+v ; splitv
+alt+t ; tabbed layout
+alt+s ; split layout
+
+alt+shift+space ; floating window toggle
+alt+space ; focus toggle
+alt+a ; focus parent
+alt+shift+minus ; move to scratchpad
+alt+minus ; scratchpad show
+
+alt+shift+r ; mode resize
+

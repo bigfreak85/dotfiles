@@ -1,0 +1,150 @@
+#/* vim: set syntax=swayconfig: */
+	bindsym --release {
+		mod4+p exec $tools/grimshot save area
+		mod4+shift+p exec $tools/grimshot save win
+		mod4+control+p exec $tools/grimshot copy area
+		$mod+Control+p exec $tools/grimshot copy win
+		Print exec $tools/grimshot save screen
+		Control+Print exec $tools/grimshot copy screen
+	}
+# Swayrec
+	bindsym $mod+control+s exec $tools/swayrec
+# Internen Bildschirm ausschalten mit 
+	bindsym $mod+Control+D exec swaymsg output eDP-1 disable
+# sway notification Center show
+	bindsym $mod+Shift+n exec swaync-client -t -sw
+# start a terminal
+  bindsym $mod+Shift+Return exec $term
+  bindsym $mod+Tab workspace back_and_forth
+# kill focused window
+  bindsym $mod+Shift+c kill
+# start your launcher
+  bindsym $mod+p exec $menu
+	bindsym mod4+b exec firefox
+  bindsym mod4+l exec pkill -USR1 swayidle
+	bindsym mod4+I exec copyq show
+	bindsym mod4+c exec virt-manager
+# Ranger
+	bindsym --no-repeat $mod+r exec foot ranger  & swaymsg workspace $files
+# Vol and Brightnesscontrol
+	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+	bindsym XF86AudioMute exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+	bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
+	bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
+	bindsym XF86MonBrightnessUP exec brightnessctl set 5%+
+
+	bindsym $mod+Shift+u exec pw-metadata -n settings 0 clock.force-rate 96000
+  bindsym $mod+Shift+d exec pw-metadata -n settings 0 clock.force-rate 48000
+  bindsym mod4+Shift+r reload
+	for_window [con_mark=$alphamark] opacity set $trans
+	bindsym $mod+Shift+a mark --toggle "$alphamark" ; [con_id=__focused__] opacity set 1 ; [con_mark=$alphamark con_id=__focused__] opacity set $trans
+
+floating_modifier $mod normal
+mode "$mode_system" {
+    bindsym l exec --no-startup-id swaymsg exit, mode "default"
+    bindsym s exec --no-startup-id systemctl suspend, mode "default"
+    bindsym r exec --no-startup-id systemctl reboot, mode "default"
+    bindsym Ctrl+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+q mode "$mode_system"
+
+# Moving around:
+# Move your focus around
+	bindsym $mod+$left focus left
+	bindsym $mod+$down focus down
+	bindsym $mod+$up focus up
+	bindsym $mod+$right focus right
+	# or use $mod+[up|down|left|right]
+	bindsym $mod+Left focus left
+	bindsym $mod+Down focus down
+	bindsym $mod+Up focus up
+	bindsym $mod+Right focus right
+	# _move_ the focused window with the same, but add Shift
+	bindsym $mod+Shift+$left move left
+	bindsym $mod+Shift+$down move down
+	bindsym $mod+Shift+$up move up
+	bindsym $mod+Shift+$right move right
+	# ditto, with arrow keys
+	bindsym $mod+Shift+Left move left
+	bindsym $mod+Shift+Down move down
+	bindsym $mod+Shift+Up move up
+	bindsym $mod+Shift+Right move right
+## Workspaces:
+   # switch to workspace
+    bindsym $mod+1 workspace 1
+    bindsym $mod+2 workspace $teams
+    bindsym $mod+3 workspace 3
+    bindsym $mod+4 workspace 4
+    bindsym $mod+5 workspace 5
+    bindsym $mod+6 workspace $pass
+    bindsym $mod+7 workspace $files
+    bindsym $mod+8 workspace $remote 
+    bindsym $mod+9 workspace $web
+    bindsym $mod+0 workspace 10
+		# Workspace to Output Binding:	
+		workspace $remote output DP-8
+    # move focused container to workspace
+    bindsym $mod+Shift+1 move container to workspace 1
+    bindsym $mod+Shift+2 move container to workspace $teams
+    bindsym $mod+Shift+3 move container to workspace 3
+    bindsym $mod+Shift+4 move container to workspace 4
+    bindsym $mod+Shift+5 move container to workspace 5
+    bindsym $mod+Shift+6 move container to workspace $pass
+    bindsym $mod+Shift+7 move container to workspace $files
+    bindsym $mod+Shift+8 move container to workspace $remote
+    bindsym $mod+Shift+9 move container to workspace $web
+    bindsym $mod+Shift+0 move container to workspace 10
+    bindsym $mod+b splith
+    bindsym $mod+v splitv
+    bindsym $mod+t layout tabbed
+    bindsym $mod+s layout toggle split
+    # Make the current focus fullscreen
+    bindsym $mod+f fullscreen
+    # Toggle the current focus between tiling and floating mode
+    bindsym $mod+Shift+space floating toggle
+    # Swap focus between the tiling area and the floating area
+    bindsym $mod+space focus mode_toggle
+    # move focus to the parent container
+    bindsym $mod+a focus parent
+## Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+			# Move the currently focused window to the s
+    bindsym $mod+Shift+minus move scratchpad
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    bindsym $mod+minus scratchpad show
+
+#
+# Resizing containers:
+#
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 40px
+    bindsym $down resize grow height 40px
+    bindsym $up resize shrink height 40px
+    bindsym $right resize grow width 40px
+
+    # ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+r mode "resize"
+#Mouse Bindings
+#sudo libinput debug-events
+bindsym --whole-window BTN_BACK exec copyq toggle
