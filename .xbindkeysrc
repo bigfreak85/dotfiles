@@ -1,9 +1,0 @@
-#VOLUP
-"amixer set Master 5%+"
-	m:0x0 + c:123
-#VOLDOWN
-"amixer set Master 5%-"
-	m:0x0 + c:122
-#AUDIOMUTE
-"amixer set Master toggle"
-	m:0x0 + c:121
